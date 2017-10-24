@@ -1,12 +1,14 @@
-# ChuteServe for Rails
+# Floodlight for Rails
 
-ChuteServe allows your Rails application to freely provide pre-configured daily data to Second Chute. It does this by mounting a set of protected API endpoints in your app. Only Second Chute can access these endpoints.
+[Floodlight](https://www.floodlight.io) helps you stop bugs in their tracks. We provide an easy way to gain insight into your data and notify you if we see problems.
+
+This gem allows your Rails application to freely provide pre-configured daily data to Floodlight. It does this by mounting a set of protected API endpoints in your app. Only Floodlight can access these endpoints.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'chute_serve-rails'
+    gem 'floodlight_rails', require: 'floodlight'
 
 And then execute:
 
@@ -14,33 +16,32 @@ And then execute:
 
 You can then install the necessary configuration by executing:
 
-    $ bundle exec rails g chute_server:install
+    $ floodlight install
 
 This will create a configuration file:
 
-    # config/initializers/chute_serve.rb
-    ChuteServe.configure do |config|
-      config.access_token = ENV['CHUTE_ACCESS_TOKEN']
-      config.namespace = 'api/second_chute'
+    # config/initializers/floodlight.rb
+    Floodlight.configure do |config|
+      config.access_token = ENV['FLOODLIGHT_TOKEN']
     end
 
     # Sample usage:
-    # ChuteServe.add :confirmed_users, -> { User.confirmed }
-    # ChuteServe.add :unpaid_orders,   -> { Order.unpaid }
+    # Floodlight.add_daily :confirmed_users,  -> { User.confirmed }
+    # Floodlight.add_daily :unpaid_orders,    -> { Order.unpaid }
+    # Floodlight.add_cumulative :total_users, -> { User }
 
-The endpoints will be mounted at the location specified by the "namespace" property.
-
-Additionally, the installation generator will create an access token for you to provide to Second Chute. **Be sure not to lose it**. We advise storing the token in an environment variable.
+You will need to check the admin dashboard for your access token. By default, we advise storing it in an environment variable in your production environment.
 
 ## Usage
 
-For an example of how to set up various metrics to track, check out the configuration file. The `add` method will expose an additional metric to the Second Chute application. They will automatically be picked up by our servers.
+For an example of how to set up various metrics to track, check out the configuration file. The `add_daily` and `add_cumulative` methods will expose additional metrics to the Floodlight application. The metrics will automatically be picked up by our servers.
 
-The `add` method takes two parameters -- a descriptive symbol and a lambda containing an ActiveRecord scope. Be aware that if you change the symbol name, it will track it as a separate stat.
+These method take two parameters -- a descriptive symbol and a lambda containing an ActiveRecord scope. Be aware that if you change the symbol name, it will track it as a separate metric.
+
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/SecondChute/chute_serve-rails. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/FloodlightTeam/floodlight. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct.
 
 ## License
 
@@ -48,4 +49,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the ChuteServe project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/SecondChute/chute_serve-rails/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the FloodlightTeam project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/FloodlightTeam/floodlight_rails/blob/master/CODE_OF_CONDUCT.md).
