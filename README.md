@@ -1,6 +1,6 @@
 # meerstats for Rails
 
-[meerstats](https://www.meerstats.io) helps you stop bugs in their tracks. We provide an easy way to gain insight into your data and notify you if we see problems.
+[meerstats](https://www.meerstats.com) helps you stop bugs in their tracks. We provide an easy way to gain insight into your data and notify you if we see problems.
 
 This gem allows your Rails application to freely provide pre-configured daily data to meerstats. It does this by mounting a set of protected API endpoints in your app. Only meerstats can access these endpoints.
 
