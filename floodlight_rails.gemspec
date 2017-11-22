@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.name        = "floodlight_rails"
   s.version     = Floodlight::VERSION
   s.authors     = ["Floodlight"]
-  s.email       = ["chuck@callebs.io"]
+  s.email       = ["chuck@floodlight.io"]
   s.homepage    = "https://github.com/FloodlightTeam/floodlight_rails"
   s.summary     = "Mountable engine for Rails to provide application data to Floodlight."
   s.description = "Mountable engine for Rails to provide application data to Floodlight."
