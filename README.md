@@ -30,7 +30,7 @@ This will create a configuration file:
     # Floodlight.add_daily :unpaid_orders,    -> { Order.unpaid }
     # Floodlight.add_cumulative :total_users, -> { User }
 
-You will need to check the admin dashboard for your access token. By default, we advise storing it in an environment variable in your production environment.
+You will need to check your application dashboard for your access token. By default, we advise storing it in an environment variable in your production environment.
 
 ## Usage
 
@@ -41,7 +41,7 @@ These method take two parameters -- a descriptive symbol and a lambda containing
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/FloodlightTeam/floodlight. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/FloodlightTeam/floodlight_rails. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct.
 
 ## License
 
