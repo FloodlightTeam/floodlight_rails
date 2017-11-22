@@ -1,10 +1,10 @@
-module Floodlight
+module Meerstats
   class Engine < ::Rails::Engine
-    isolate_namespace Floodlight
+    isolate_namespace Meerstats
 
-    initializer 'floodlight.mount' do |app|
+    initializer 'meerstats.mount' do |app|
       app.routes.append do
-        mount Floodlight::Engine => '/floodlight'
+        mount Meerstats::Engine => '/meerstats'
       end
     end
 

@@ -1,3 +1,3 @@
-module Floodlight
+module Meerstats
   VERSION = '1.0.0'
 end

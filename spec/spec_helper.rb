@@ -10,7 +10,7 @@ Rails.backtrace_cleaner.remove_silencers!
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
 RSpec.configure do |config|
-  config.include Floodlight::StubAccessToken
+  config.include Meerstats::StubAccessToken
 
   config.mock_with :rspec
   config.use_transactional_fixtures = true
@@ -18,6 +18,6 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.before(:each) do
-    Floodlight.metrics.clear
+    Meerstats.metrics.clear
   end
 end

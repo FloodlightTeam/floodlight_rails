@@ -1,4 +1,4 @@
-module Floodlight
+module Meerstats
   class LazyMetric
     class InvalidMetricTypeException < StandardError; end
 

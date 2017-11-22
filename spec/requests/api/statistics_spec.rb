@@ -5,15 +5,15 @@ RSpec.describe "Statistics", type: :request do
   class Order; end
 
   subject do
-    get "/floodlight/api/statistics/#{stat_name}", params: { access_token: token }
+    get "/meerstats/api/statistics/#{stat_name}", params: { access_token: token }
   end
 
   let(:stat_name) { "orders" }
 
   before do
-    Floodlight.add :daily_users, scope: -> { User }
-    Floodlight.add :orders, scope: -> { Order }
-    Floodlight.add :total_users, scope: -> { User }, type: 'cumulative'
+    Meerstats.add :daily_users, scope: -> { User }
+    Meerstats.add :orders, scope: -> { Order }
+    Meerstats.add :total_users, scope: -> { User }, type: 'cumulative'
 
     allow(User).to receive(:where).
       and_return double("Relation", count: 10)

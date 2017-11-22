@@ -2,7 +2,7 @@ require "spec_helper"
 
 RSpec.describe "Health check", type: :request do
   subject do
-    get '/floodlight/api/health_check', params: { access_token: token }
+    get '/meerstats/api/health_check', params: { access_token: token }
   end
 
   let(:token) { '1234' }

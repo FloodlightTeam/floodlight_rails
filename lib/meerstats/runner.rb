@@ -1,11 +1,11 @@
-require 'floodlight/installer'
+require 'meerstats/installer'
 
-module Floodlight
+module Meerstats
   class Runner
     def self.invoke
       case ARGV
       when ["install"]
-        Floodlight::Installer.perform
+        Meerstats::Installer.perform
       end
     end
   end

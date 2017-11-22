@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    floodlight_rails (1.0.0)
+    meerstats_rails (1.0.0)
       rails
 
 GEM
@@ -147,7 +147,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
-  floodlight_rails!
+  meerstats_rails!
   pry
   rspec-rails
   sqlite3

@@ -1,8 +1,8 @@
 require "spec_helper"
 
-module Floodlight
+module Meerstats
   describe Configuration do
-    subject { Floodlight.configuration }
+    subject { Meerstats.configuration }
 
     describe '#access_token' do
       it 'sets value' do
@@ -13,7 +13,7 @@ module Floodlight
 
     describe '.configure' do
       before do
-        Floodlight.configure do |config|
+        Meerstats.configure do |config|
           config.access_token = '4321'
         end
       end

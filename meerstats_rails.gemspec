@@ -1,22 +1,22 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "floodlight/version"
+require "meerstats/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "floodlight_rails"
-  s.version     = Floodlight::VERSION
-  s.authors     = ["Floodlight"]
-  s.email       = ["chuck@floodlight.io"]
-  s.homepage    = "https://github.com/FloodlightTeam/floodlight_rails"
-  s.summary     = "Mountable engine for Rails to provide application data to Floodlight."
-  s.description = "Mountable engine for Rails to provide application data to Floodlight."
+  s.name        = "meerstats_rails"
+  s.version     = Meerstats::VERSION
+  s.authors     = ["meerstats"]
+  s.email       = ["chuck@meerstats.com"]
+  s.homepage    = "https://github.com/meerstats/meerstats_rails"
+  s.summary     = "Mountable engine for Rails to provide application data to meerstats."
+  s.description = "Mountable engine for Rails to provide application data to meerstats."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["spec/**/*"]
-  s.executables = "floodlight"
+  s.executables = "meerstats"
 
   s.add_dependency "rails"
 

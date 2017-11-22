@@ -1,9 +1,9 @@
-require "floodlight/engine"
-require "floodlight/configuration"
-require "floodlight/installer"
-require "floodlight/lazy_metric"
+require "meerstats/engine"
+require "meerstats/configuration"
+require "meerstats/installer"
+require "meerstats/lazy_metric"
 
-module Floodlight
+module Meerstats
   class << self
     attr_writer :configuration
   end

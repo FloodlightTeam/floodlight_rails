@@ -1,4 +1,4 @@
-Floodlight::Engine.routes.draw do
+Meerstats::Engine.routes.draw do
   namespace :api do
     resources :health_check, only: [:index]
     resources :metrics, only: [:index]

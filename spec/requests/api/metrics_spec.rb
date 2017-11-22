@@ -2,12 +2,12 @@ require "spec_helper"
 
 RSpec.describe "Metrics", type: :request do
   subject do
-    get '/floodlight/api/metrics', params: { access_token: token }
+    get '/meerstats/api/metrics', params: { access_token: token }
   end
 
   before do
-    Floodlight.add_daily :users, scope: -> { User }
-    Floodlight.add_daily :yesterdays_orders, scope: -> { Order.for_yesterday }
+    Meerstats.add_daily :users, scope: -> { User }
+    Meerstats.add_daily :yesterdays_orders, scope: -> { Order.for_yesterday }
   end
 
   let(:token) { '1234' }
