@@ -22,6 +22,8 @@ module Meerstats
       end
 
       computed_scope.count
+    rescue
+      0
     end
   end
 end

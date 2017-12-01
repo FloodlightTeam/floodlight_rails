@@ -39,7 +39,5 @@ module Meerstats
   def self.statistics_for(name, days_ago: 1)
     metric = metrics.find { |m| m.name == name.to_sym }
     metric.compute(days_ago: days_ago)
-  rescue
-    nil
   end
 end
